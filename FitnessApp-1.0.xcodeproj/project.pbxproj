@@ -83,9 +83,25 @@
 		DD5734E22997B3E90039567D /* MainModule */ = {
 			isa = PBXGroup;
 			children = (
-				DD5734D02997B1500039567D /* ViewController.swift */,
+				DD5734E42997B51C0039567D /* View */,
+				DD5734E32997B5140039567D /* Controller */,
 			);
 			path = MainModule;
+			sourceTree = "<group>";
+		};
+		DD5734E32997B5140039567D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD5734D02997B1500039567D /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		DD5734E42997B51C0039567D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
