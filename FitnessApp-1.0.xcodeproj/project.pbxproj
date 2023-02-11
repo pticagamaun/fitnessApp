@@ -7,21 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD1184EE2998065800BBEBD3 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1184ED2998065800BBEBD3 /* UILabel + Extension.swift */; };
+		DD1184F4299809F800BBEBD3 /* AddWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1184F3299809F800BBEBD3 /* AddWorkoutButton.swift */; };
 		DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CC2997B1500039567D /* AppDelegate.swift */; };
 		DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CE2997B1500039567D /* SceneDelegate.swift */; };
-		DD5734D12997B1500039567D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734D02997B1500039567D /* ViewController.swift */; };
+		DD5734D12997B1500039567D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734D02997B1500039567D /* MainViewController.swift */; };
 		DD5734D62997B1560039567D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD5734D52997B1560039567D /* Assets.xcassets */; };
 		DD5734D92997B1560039567D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD5734D72997B1560039567D /* LaunchScreen.storyboard */; };
+		DD5734E72997F1240039567D /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734E62997F1240039567D /* UIColor + Extension.swift */; };
+		DD5734EA2997F42F0039567D /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734E92997F42F0039567D /* UIView + Extension.swift */; };
+		DD5734EC2997F59D0039567D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734EB2997F59D0039567D /* HeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DD1184ED2998065800BBEBD3 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
+		DD1184F3299809F800BBEBD3 /* AddWorkoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutButton.swift; sourceTree = "<group>"; };
 		DD5734C92997B1500039567D /* FitnessApp-1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FitnessApp-1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5734CC2997B1500039567D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD5734CE2997B1500039567D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DD5734D02997B1500039567D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD5734D02997B1500039567D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		DD5734D52997B1560039567D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD5734D82997B1560039567D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD5734DA2997B1560039567D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD5734E62997F1240039567D /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		DD5734E92997F42F0039567D /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		DD5734EB2997F59D0039567D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +45,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DD1184EF2998099500BBEBD3 /* Unique */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Unique;
+			sourceTree = "<group>";
+		};
+		DD1184F2299809DF00BBEBD3 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				DD1184F3299809F800BBEBD3 /* AddWorkoutButton.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
 		DD5734C02997B1500039567D = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +81,7 @@
 			children = (
 				DD5734E02997B3660039567D /* Application */,
 				DD5734E22997B3E90039567D /* MainModule */,
+				DD5734E52997F0FD0039567D /* Extension */,
 				DD5734E12997B3D00039567D /* Other */,
 			);
 			path = "FitnessApp-1.0";
@@ -92,7 +118,7 @@
 		DD5734E32997B5140039567D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				DD5734D02997B1500039567D /* ViewController.swift */,
+				DD5734D02997B1500039567D /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -100,8 +126,29 @@
 		DD5734E42997B51C0039567D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DD5734EB2997F59D0039567D /* HeaderView.swift */,
+				DD1184F2299809DF00BBEBD3 /* SubView */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		DD5734E52997F0FD0039567D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DD5734E82997F3F40039567D /* UIKit */,
+				DD1184EF2998099500BBEBD3 /* Unique */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DD5734E82997F3F40039567D /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				DD5734E62997F1240039567D /* UIColor + Extension.swift */,
+				DD5734E92997F42F0039567D /* UIView + Extension.swift */,
+				DD1184ED2998065800BBEBD3 /* UILabel + Extension.swift */,
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,8 +221,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DD5734D12997B1500039567D /* ViewController.swift in Sources */,
+				DD5734D12997B1500039567D /* MainViewController.swift in Sources */,
+				DD1184F4299809F800BBEBD3 /* AddWorkoutButton.swift in Sources */,
+				DD5734EC2997F59D0039567D /* HeaderView.swift in Sources */,
+				DD5734E72997F1240039567D /* UIColor + Extension.swift in Sources */,
+				DD1184EE2998065800BBEBD3 /* UILabel + Extension.swift in Sources */,
 				DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */,
+				DD5734EA2997F42F0039567D /* UIView + Extension.swift in Sources */,
 				DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
