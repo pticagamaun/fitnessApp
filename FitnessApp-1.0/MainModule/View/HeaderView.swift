@@ -32,6 +32,7 @@ final class HeaderView: UIView {
                                                          event: .touchUpInside)
     private let weatherView = WeatherView()
     private let calendarCollectionView = CalendarCollectionView()
+    private let workoutTodayLabel = UILabel(text: "Workout today", textColor: .systemGray)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,6 +51,7 @@ final class HeaderView: UIView {
         addView(addWorkoutButton)
         addView(weatherView)
         addView(calendarCollectionView)
+        addView(workoutTodayLabel)
     }
     
     @objc private func addWorkoutButtonTap() {
@@ -94,6 +96,9 @@ extension HeaderView {
             calendarCollectionView.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 105),
             calendarCollectionView.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor, constant: -5),
             calendarCollectionView.bottomAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: -5),
+            
+            workoutTodayLabel.topAnchor.constraint(equalTo: addWorkoutButton.bottomAnchor, constant: 10),
+            workoutTodayLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
         ])
     }
 }
