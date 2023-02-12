@@ -12,6 +12,7 @@ final class AddWorkoutButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupButton()
+        dropShadow()
     }
     
     required init?(coder: NSCoder) {
@@ -25,6 +26,11 @@ final class AddWorkoutButton: UIButton {
         layer.cornerRadius = 10
         buttonConfiguration()
     }
+    
+    convenience init(_ target: UIView, action: Selector, event: UIControl.Event) {
+        self.init(frame: .zero)
+        self.addTarget(target, action: action, for: event)
+    }
 }
 
 extension AddWorkoutButton {
@@ -35,7 +41,6 @@ extension AddWorkoutButton {
                 configuration.imagePadding = 10
                 configuration.titleAlignment = .center
                 configuration.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0)
-                configuration.title = "Add Workout"
                 configuration.attributedTitle = AttributedString("Add Workout",
                                                                  attributes: AttributeContainer([NSAttributedString.Key.font: UIFont(name: "Roboto-Medium",size: 11) as Any]))
                 self.configuration = configuration

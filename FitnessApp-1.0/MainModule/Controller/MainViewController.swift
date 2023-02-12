@@ -25,16 +25,17 @@ final class MainViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = UIColor.mainBackground
         view.addView(headerView)
+        headerView.backgroundColor = .red
     }
 }
 
 extension MainViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            headerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.24)
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            headerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.27),
         ])
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DD1184EE2998065800BBEBD3 /* UILabel + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1184ED2998065800BBEBD3 /* UILabel + Extension.swift */; };
 		DD1184F4299809F800BBEBD3 /* AddWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1184F3299809F800BBEBD3 /* AddWorkoutButton.swift */; };
+		DD1184F62999759300BBEBD3 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1184F52999759300BBEBD3 /* WeatherView.swift */; };
 		DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CC2997B1500039567D /* AppDelegate.swift */; };
 		DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CE2997B1500039567D /* SceneDelegate.swift */; };
 		DD5734D12997B1500039567D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734D02997B1500039567D /* MainViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		DD1184ED2998065800BBEBD3 /* UILabel + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel + Extension.swift"; sourceTree = "<group>"; };
 		DD1184F3299809F800BBEBD3 /* AddWorkoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWorkoutButton.swift; sourceTree = "<group>"; };
+		DD1184F52999759300BBEBD3 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		DD5734C92997B1500039567D /* FitnessApp-1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FitnessApp-1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5734CC2997B1500039567D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD5734CE2997B1500039567D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		DD1184EF2998099500BBEBD3 /* Unique */ = {
 			isa = PBXGroup;
 			children = (
+				DD1184F3299809F800BBEBD3 /* AddWorkoutButton.swift */,
 			);
 			path = Unique;
 			sourceTree = "<group>";
@@ -55,7 +58,6 @@
 		DD1184F2299809DF00BBEBD3 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				DD1184F3299809F800BBEBD3 /* AddWorkoutButton.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -127,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				DD5734EB2997F59D0039567D /* HeaderView.swift */,
+				DD1184F52999759300BBEBD3 /* WeatherView.swift */,
 				DD1184F2299809DF00BBEBD3 /* SubView */,
 			);
 			path = View;
@@ -227,6 +230,7 @@
 				DD5734E72997F1240039567D /* UIColor + Extension.swift in Sources */,
 				DD1184EE2998065800BBEBD3 /* UILabel + Extension.swift in Sources */,
 				DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */,
+				DD1184F62999759300BBEBD3 /* WeatherView.swift in Sources */,
 				DD5734EA2997F42F0039567D /* UIView + Extension.swift in Sources */,
 				DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */,
 			);
