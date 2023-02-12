@@ -10,6 +10,7 @@ import UIKit
 final class MainViewController: UIViewController {
     
     private let headerView = HeaderView()
+    private let workoutTableView = WorkoutTableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,16 +26,22 @@ final class MainViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = UIColor.mainBackground
         view.addView(headerView)
+        view.addView(workoutTableView)
     }
 }
 
 extension MainViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            headerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.24)
+            headerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            headerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.27),
+            
+            workoutTableView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 0),
+            workoutTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+            workoutTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            workoutTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         ])
     }
 }
