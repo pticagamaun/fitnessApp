@@ -25,7 +25,6 @@ final class MainViewController: UIViewController {
     private func setupView() {
         view.backgroundColor = UIColor.mainBackground
         view.addView(headerView)
-        headerView.backgroundColor = .red
     }
 }
 

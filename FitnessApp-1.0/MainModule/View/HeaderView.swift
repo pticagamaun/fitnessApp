@@ -24,9 +24,14 @@ final class HeaderView: UIView {
         return view
     }()
     
-    private let userNameLabel = UILabel(text: "Your Name", textColor: .specialTextColor)
-    private lazy var addWorkoutButton = AddWorkoutButton(self, action: #selector(addWorkoutButtonTap), event: .touchUpInside)
+    private let userNameLabel = UILabel(text: "Your Name",
+                                        textColor: .specialTextColor,
+                                        font: .robotoMedium24)
+    private lazy var addWorkoutButton = AddWorkoutButton(self,
+                                                         action: #selector(addWorkoutButtonTap),
+                                                         event: .touchUpInside)
     private let weatherView = WeatherView()
+    private let calendarCollectionView = CalendarCollectionView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,6 +49,7 @@ final class HeaderView: UIView {
         addView(userNameLabel)
         addView(addWorkoutButton)
         addView(weatherView)
+        addView(calendarCollectionView)
     }
     
     @objc private func addWorkoutButtonTap() {
@@ -83,6 +89,11 @@ extension HeaderView {
             weatherView.leadingAnchor.constraint(equalTo: addWorkoutButton.trailingAnchor, constant: 5),
             weatherView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             weatherView.heightAnchor.constraint(equalToConstant: 90),
+            
+            calendarCollectionView.topAnchor.constraint(equalTo: calendarView.topAnchor, constant: 5),
+            calendarCollectionView.leadingAnchor.constraint(equalTo: calendarView.leadingAnchor, constant: 105),
+            calendarCollectionView.trailingAnchor.constraint(equalTo: calendarView.trailingAnchor, constant: -5),
+            calendarCollectionView.bottomAnchor.constraint(equalTo: calendarView.bottomAnchor, constant: -5),
         ])
     }
 }

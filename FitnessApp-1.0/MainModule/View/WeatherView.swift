@@ -16,7 +16,7 @@ final class WeatherView: UIView {
     }()
     
     private let weatherTitleLabel = UILabel(text: "Sunny",
-                                            textColor: .specialTextColor)
+                                            textColor: .specialTextColor, font: .robotoMedium18)
     private let weatherDescriptionLabel = UILabel(text: "Nice weather to workout outside!",
                                                   textColor: .systemGray)
     
@@ -48,13 +48,13 @@ extension WeatherView {
             weatherImage.heightAnchor.constraint(equalToConstant: 60),
             weatherImage.widthAnchor.constraint(equalToConstant: 60),
             
-            weatherTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            weatherTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            weatherTitleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 15),
+            weatherTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             weatherTitleLabel.trailingAnchor.constraint(equalTo: weatherImage.leadingAnchor, constant: -5),
             weatherTitleLabel.heightAnchor.constraint(equalToConstant: 18),
             
             weatherDescriptionLabel.topAnchor.constraint(equalTo: weatherTitleLabel.bottomAnchor, constant: 3),
-            weatherDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            weatherDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 15),
             weatherDescriptionLabel.trailingAnchor.constraint(equalTo: weatherImage.leadingAnchor, constant: -5),
             weatherDescriptionLabel.heightAnchor.constraint(equalToConstant: 35)
         ])

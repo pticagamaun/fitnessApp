@@ -31,22 +31,20 @@ final class AddWorkoutButton: UIButton {
         self.init(frame: .zero)
         self.addTarget(target, action: action, for: event)
     }
-}
-
-extension AddWorkoutButton {
+    
     private func buttonConfiguration() {
-            if #available(iOS 15.0, *) {
-                var configuration = UIButton.Configuration.plain()
-                configuration.imagePlacement = .top
-                configuration.imagePadding = 10
-                configuration.titleAlignment = .center
-                configuration.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0)
-                configuration.attributedTitle = AttributedString("Add Workout",
-                                                                 attributes: AttributeContainer([NSAttributedString.Key.font: UIFont(name: "Roboto-Medium",size: 11) as Any]))
-                self.configuration = configuration
-            } else {
-                imageEdgeInsets = .init(top: 0, left: 20, bottom: 15, right: 0)
-                titleEdgeInsets = .init(top: 50, left: -40, bottom: 0, right: 0)
-            }
+        if #available(iOS 15.0, *) {
+            var configuration = UIButton.Configuration.plain()
+            configuration.imagePlacement = .top
+            configuration.imagePadding = 10
+            configuration.titleAlignment = .center
+            configuration.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0)
+            configuration.attributedTitle = AttributedString("Add Workout",
+                                                             attributes: AttributeContainer([NSAttributedString.Key.font: UIFont(name: "Roboto-Medium",size: 13) as Any]))
+            self.configuration = configuration
+        } else {
+            imageEdgeInsets = .init(top: 0, left: 20, bottom: 15, right: 0)
+            titleEdgeInsets = .init(top: 50, left: -40, bottom: 0, right: 0)
         }
+    }
 }
