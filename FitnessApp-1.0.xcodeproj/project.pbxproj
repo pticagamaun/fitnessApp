@@ -16,6 +16,7 @@
 		DD118501299984A100BBEBD3 /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD118500299984A100BBEBD3 /* CalendarCollectionView.swift */; };
 		DD1185042999894400BBEBD3 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1185032999894400BBEBD3 /* CalendarCollectionViewCell.swift */; };
 		DD1185062999936F00BBEBD3 /* WorkoutTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1185052999936F00BBEBD3 /* WorkoutTableView.swift */; };
+		DD118508299AB38200BBEBD3 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD118507299AB38200BBEBD3 /* WorkoutTableViewCell.swift */; };
 		DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CC2997B1500039567D /* AppDelegate.swift */; };
 		DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CE2997B1500039567D /* SceneDelegate.swift */; };
 		DD5734D12997B1500039567D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734D02997B1500039567D /* MainViewController.swift */; };
@@ -36,6 +37,7 @@
 		DD118500299984A100BBEBD3 /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
 		DD1185032999894400BBEBD3 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD1185052999936F00BBEBD3 /* WorkoutTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableView.swift; sourceTree = "<group>"; };
+		DD118507299AB38200BBEBD3 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		DD5734C92997B1500039567D /* FitnessApp-1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FitnessApp-1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5734CC2997B1500039567D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD5734CE2997B1500039567D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				DD1185032999894400BBEBD3 /* CalendarCollectionViewCell.swift */,
+				DD118507299AB38200BBEBD3 /* WorkoutTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				DD1184F4299809F800BBEBD3 /* AddWorkoutButton.swift in Sources */,
 				DD1184FA29997CCB00BBEBD3 /* UIFont + Extensions.swift in Sources */,
 				DD1185062999936F00BBEBD3 /* WorkoutTableView.swift in Sources */,
+				DD118508299AB38200BBEBD3 /* WorkoutTableViewCell.swift in Sources */,
 				DD5734EC2997F59D0039567D /* HeaderView.swift in Sources */,
 				DD5734E72997F1240039567D /* UIColor + Extension.swift in Sources */,
 				DD1184EE2998065800BBEBD3 /* UILabel + Extension.swift in Sources */,
