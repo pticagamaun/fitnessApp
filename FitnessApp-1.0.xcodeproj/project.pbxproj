@@ -17,6 +17,7 @@
 		DD1185042999894400BBEBD3 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1185032999894400BBEBD3 /* CalendarCollectionViewCell.swift */; };
 		DD1185062999936F00BBEBD3 /* WorkoutTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1185052999936F00BBEBD3 /* WorkoutTableView.swift */; };
 		DD118508299AB38200BBEBD3 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD118507299AB38200BBEBD3 /* WorkoutTableViewCell.swift */; };
+		DD11850A299EA01F00BBEBD3 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD118509299EA01F00BBEBD3 /* UIStackView + Extensions.swift */; };
 		DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CC2997B1500039567D /* AppDelegate.swift */; };
 		DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CE2997B1500039567D /* SceneDelegate.swift */; };
 		DD5734D12997B1500039567D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734D02997B1500039567D /* MainViewController.swift */; };
@@ -38,6 +39,7 @@
 		DD1185032999894400BBEBD3 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		DD1185052999936F00BBEBD3 /* WorkoutTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableView.swift; sourceTree = "<group>"; };
 		DD118507299AB38200BBEBD3 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
+		DD118509299EA01F00BBEBD3 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		DD5734C92997B1500039567D /* FitnessApp-1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FitnessApp-1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5734CC2997B1500039567D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD5734CE2997B1500039567D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				DD5734E92997F42F0039567D /* UIView + Extension.swift */,
 				DD1184ED2998065800BBEBD3 /* UILabel + Extension.swift */,
 				DD1184F929997CCB00BBEBD3 /* UIFont + Extensions.swift */,
+				DD118509299EA01F00BBEBD3 /* UIStackView + Extensions.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */,
 				DD1184F62999759300BBEBD3 /* WeatherView.swift in Sources */,
 				DD5734EA2997F42F0039567D /* UIView + Extension.swift in Sources */,
+				DD11850A299EA01F00BBEBD3 /* UIStackView + Extensions.swift in Sources */,
 				DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

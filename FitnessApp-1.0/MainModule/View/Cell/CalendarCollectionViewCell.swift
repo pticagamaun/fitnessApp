@@ -10,7 +10,7 @@ import UIKit
 final class CalendarCollectionViewCell: UICollectionViewCell {
     
     static let idCallendarCollectionCell = "CalendarCollectionViewIdentifier"
-    private let weekdayLabel = UILabel(text: "Tu", textColor: .specialTextColor, font: .robotoMedium16)
+    private let weekdayLabel = UILabel(text: "Tu", textColor: .specialLightBlack, font: .robotoMedium16)
     private let dayLabel = UILabel(text: "19", textColor: .specialDarkGreen, font: .robotoMedium20)
     
     override init(frame: CGRect) {
