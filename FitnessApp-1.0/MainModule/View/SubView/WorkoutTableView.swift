@@ -39,6 +39,7 @@ extension WorkoutTableView: UITableViewDelegate, UITableViewDataSource {
         guard let cell = dequeueReusableCell(withIdentifier: WorkoutTableViewCell.idWorkoutTableViewCell,
                                              for: indexPath) as? WorkoutTableViewCell
         else {return UITableViewCell()}
+        cell.workoutCellDelegate = self
         return cell
     }
     
@@ -48,5 +49,11 @@ extension WorkoutTableView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         100
+    }
+}
+
+extension WorkoutTableView: MainTableViewCellProtocol {
+    func startButtonTapped() {
+        print(#function)
     }
 }

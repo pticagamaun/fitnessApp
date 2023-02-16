@@ -16,7 +16,7 @@ final class WeatherView: UIView {
     }()
     
     private let weatherTitleLabel = UILabel(text: "Sunny",
-                                            textColor: .specialTextColor, font: .robotoMedium18)
+                                            textColor: .specialLightBlack, font: .robotoMedium18)
     private let weatherDescriptionLabel = UILabel(text: "Nice weather to workout outside!",
                                                   textColor: .systemGray)
     

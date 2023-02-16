@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol MainTableViewCellProtocol: AnyObject {
+    func startButtonTapped()
+}
+
 final class WorkoutTableViewCell: UITableViewCell {
     
+    weak var workoutCellDelegate: MainTableViewCellProtocol?
     static let idWorkoutTableViewCell = "idWorkoutTableViewCell"
     private let backgroundViewCell: UIView = {
         let view = UIView()
@@ -22,13 +27,30 @@ final class WorkoutTableViewCell: UITableViewCell {
         view.layer.cornerRadius = 15
         return view
     }()
-    private let imageWorkout: UIImageView = {
+    private let workoutImage: UIImageView = {
         let image = UIImageView()
         image.tintColor = .black
         image.image = UIImage(named: "workoutImage")?.withRenderingMode(.alwaysTemplate)
         image.contentMode = .scaleAspectFit
         return image
     }()
+    
+    private let titleWorkoutLabel = UILabel(text: "Pull Ups", textColor: .specialBlack, font: .robotoMedium22)
+    private let repsLabel = UILabel(text: "Reps: 10", textColor: .specialLightBlack, font: .robotoMedium16)
+    private let setsLabel = UILabel(text: "Sets: 2", textColor: .specialLightBlack, font: .robotoMedium16)
+    private lazy var startButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.backgroundColor = .specialYellow
+        button.setTitle("START", for: .normal)
+        button.titleLabel?.font = .robotoMedium16
+        button.setTitleColor(UIColor.specialDarkGreen, for: .normal)
+        button.layer.cornerRadius = 5
+        button.addTarget(self, action: #selector(startWorkoutButtonTapped), for: .touchUpInside)
+        button.dropShadow()
+        return button
+    }()
+    private var stackView = UIStackView()
+    private var labelsStackView = UIStackView()
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -45,9 +67,16 @@ final class WorkoutTableViewCell: UITableViewCell {
         backgroundColor = .clear
         addView(backgroundViewCell)
         addView(subView)
-        subView.addView(imageWorkout)
+        subView.addView(workoutImage)
+        stackView = UIStackView([repsLabel, setsLabel], spacing: 5, axis: .horizontal)
+        labelsStackView = UIStackView([titleWorkoutLabel, stackView], spacing: 5, axis: .vertical)
+        addView(labelsStackView)
+        contentView.addView(startButton)
     }
     
+    @objc private func startWorkoutButtonTapped() {
+        workoutCellDelegate?.startButtonTapped()
+    }
 }
 
 extension WorkoutTableViewCell {
@@ -64,10 +93,19 @@ extension WorkoutTableViewCell {
             subView.bottomAnchor.constraint(equalTo: backgroundViewCell.bottomAnchor, constant: -10),
             subView.widthAnchor.constraint(equalTo: backgroundViewCell.widthAnchor, multiplier: 0.2),
             
-            imageWorkout.topAnchor.constraint(equalTo: subView.topAnchor, constant: 5),
-            imageWorkout.leadingAnchor.constraint(equalTo: subView.leadingAnchor, constant: 5),
-            imageWorkout.bottomAnchor.constraint(equalTo: subView.bottomAnchor, constant: -5),
-            imageWorkout.trailingAnchor.constraint(equalTo: subView.trailingAnchor, constant: -5),
+            workoutImage.topAnchor.constraint(equalTo: subView.topAnchor, constant: 5),
+            workoutImage.leadingAnchor.constraint(equalTo: subView.leadingAnchor, constant: 5),
+            workoutImage.bottomAnchor.constraint(equalTo: subView.bottomAnchor, constant: -5),
+            workoutImage.trailingAnchor.constraint(equalTo: subView.trailingAnchor, constant: -5),
+            
+            labelsStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            labelsStackView.leadingAnchor.constraint(equalTo: subView.trailingAnchor, constant: 10),
+            labelsStackView.heightAnchor.constraint(equalToConstant: 40),
+            
+            startButton.topAnchor.constraint(equalTo: labelsStackView.bottomAnchor, constant: 3),
+            startButton.leadingAnchor.constraint(equalTo: subView.trailingAnchor, constant: 10),
+            startButton.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -10),
+            startButton.bottomAnchor.constraint(equalTo: backgroundViewCell.bottomAnchor, constant: -10)
         ])
     }
 }

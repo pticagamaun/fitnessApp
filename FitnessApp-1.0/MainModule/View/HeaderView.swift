@@ -25,7 +25,7 @@ final class HeaderView: UIView {
     }()
     
     private let userNameLabel = UILabel(text: "Your Name",
-                                        textColor: .specialTextColor,
+                                        textColor: .specialLightBlack,
                                         font: .robotoMedium24)
     private lazy var addWorkoutButton = AddWorkoutButton(self,
                                                          action: #selector(addWorkoutButtonTap),
