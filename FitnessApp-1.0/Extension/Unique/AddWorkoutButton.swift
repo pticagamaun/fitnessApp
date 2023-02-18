@@ -27,7 +27,7 @@ final class AddWorkoutButton: UIButton {
         buttonConfiguration()
     }
     
-    convenience init(_ target: UIView, action: Selector, event: UIControl.Event) {
+    convenience init(_ target: AnyObject, action: Selector, event: UIControl.Event) {
         self.init(frame: .zero)
         self.addTarget(target, action: action, for: event)
     }

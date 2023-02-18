@@ -24,9 +24,10 @@ final class MainViewController: UIViewController {
     }
     
     private func setupView() {
-        view.backgroundColor = UIColor.mainBackground
+        view.backgroundColor = .mainBackground
         view.addView(headerView)
         view.addView(workoutTableView)
+        headerView.headerViewDelegate = self
     }
 }
 
@@ -43,6 +44,14 @@ extension MainViewController {
             workoutTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             workoutTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         ])
+    }
+}
+
+extension MainViewController: HeaderViewProtocol {
+    func addWorkoutButtonTapped() {
+        let newWorkoutVC = NewWorkoutViewController()
+        newWorkoutVC.modalPresentationStyle = .fullScreen
+        present(newWorkoutVC, animated: true)
     }
 }
 

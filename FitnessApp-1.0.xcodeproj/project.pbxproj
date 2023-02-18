@@ -18,6 +18,8 @@
 		DD1185062999936F00BBEBD3 /* WorkoutTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1185052999936F00BBEBD3 /* WorkoutTableView.swift */; };
 		DD118508299AB38200BBEBD3 /* WorkoutTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD118507299AB38200BBEBD3 /* WorkoutTableViewCell.swift */; };
 		DD11850A299EA01F00BBEBD3 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD118509299EA01F00BBEBD3 /* UIStackView + Extensions.swift */; };
+		DD11850D29A15E2900BBEBD3 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11850C29A15E2900BBEBD3 /* NewWorkoutViewController.swift */; };
+		DD11850F29A1600400BBEBD3 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11850E29A1600400BBEBD3 /* CloseButton.swift */; };
 		DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CC2997B1500039567D /* AppDelegate.swift */; };
 		DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CE2997B1500039567D /* SceneDelegate.swift */; };
 		DD5734D12997B1500039567D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734D02997B1500039567D /* MainViewController.swift */; };
@@ -40,6 +42,8 @@
 		DD1185052999936F00BBEBD3 /* WorkoutTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableView.swift; sourceTree = "<group>"; };
 		DD118507299AB38200BBEBD3 /* WorkoutTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTableViewCell.swift; sourceTree = "<group>"; };
 		DD118509299EA01F00BBEBD3 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
+		DD11850C29A15E2900BBEBD3 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
+		DD11850E29A1600400BBEBD3 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
 		DD5734C92997B1500039567D /* FitnessApp-1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FitnessApp-1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5734CC2997B1500039567D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD5734CE2997B1500039567D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				DD1184F3299809F800BBEBD3 /* AddWorkoutButton.swift */,
+				DD11850E29A1600400BBEBD3 /* CloseButton.swift */,
 			);
 			path = Unique;
 			sourceTree = "<group>";
@@ -98,6 +103,22 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		DD11850B29A15E0E00BBEBD3 /* NewWorkoutModule */ = {
+			isa = PBXGroup;
+			children = (
+				DD11851029A169BB00BBEBD3 /* Controller */,
+			);
+			path = NewWorkoutModule;
+			sourceTree = "<group>";
+		};
+		DD11851029A169BB00BBEBD3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DD11850C29A15E2900BBEBD3 /* NewWorkoutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		DD5734C02997B1500039567D = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +140,7 @@
 			children = (
 				DD5734E02997B3660039567D /* Application */,
 				DD5734E22997B3E90039567D /* MainModule */,
+				DD11850B29A15E0E00BBEBD3 /* NewWorkoutModule */,
 				DD5734E52997F0FD0039567D /* Extension */,
 				DD5734E12997B3D00039567D /* Other */,
 			);
@@ -272,6 +294,7 @@
 				DD1184FA29997CCB00BBEBD3 /* UIFont + Extensions.swift in Sources */,
 				DD1185062999936F00BBEBD3 /* WorkoutTableView.swift in Sources */,
 				DD118508299AB38200BBEBD3 /* WorkoutTableViewCell.swift in Sources */,
+				DD11850F29A1600400BBEBD3 /* CloseButton.swift in Sources */,
 				DD5734EC2997F59D0039567D /* HeaderView.swift in Sources */,
 				DD5734E72997F1240039567D /* UIColor + Extension.swift in Sources */,
 				DD1184EE2998065800BBEBD3 /* UILabel + Extension.swift in Sources */,
@@ -279,6 +302,7 @@
 				DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */,
 				DD1184F62999759300BBEBD3 /* WeatherView.swift in Sources */,
 				DD5734EA2997F42F0039567D /* UIView + Extension.swift in Sources */,
+				DD11850D29A15E2900BBEBD3 /* NewWorkoutViewController.swift in Sources */,
 				DD11850A299EA01F00BBEBD3 /* UIStackView + Extensions.swift in Sources */,
 				DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */,
 			);

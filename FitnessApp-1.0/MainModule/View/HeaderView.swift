@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol HeaderViewProtocol: AnyObject {
+    func addWorkoutButtonTapped()
+}
+
 final class HeaderView: UIView {
     
+    weak var headerViewDelegate: HeaderViewProtocol?
     private let userPhoto: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .specialLightGray
@@ -16,14 +21,12 @@ final class HeaderView: UIView {
         image.layer.borderWidth = 5
         return image
     }()
-    
     private let calendarView: UIView = {
         let view = UIView()
         view.backgroundColor = .specialGreen
         view.layer.cornerRadius = 10
         return view
     }()
-    
     private let userNameLabel = UILabel(text: "Your Name",
                                         textColor: .specialLightBlack,
                                         font: .robotoMedium24)
@@ -55,7 +58,7 @@ final class HeaderView: UIView {
     }
     
     @objc private func addWorkoutButtonTap() {
-        print("addWorkoutButtonTap")
+        headerViewDelegate?.addWorkoutButtonTapped()
     }
     
     public func setCornerRadius() {
