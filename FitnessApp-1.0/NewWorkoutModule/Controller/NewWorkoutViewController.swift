@@ -12,6 +12,7 @@ final class NewWorkoutViewController: UIViewController {
     private let titleLabel = UILabel(text: "NEW WORKOUT", textColor: .specialBlack, font: .robotoMedium24)
     private lazy var closeButton = CloseButton(self, action: #selector(tapCloseButton), event: .touchUpInside)
     private let nameView = NameView()
+    private let dateAndRepeatView = DateAndRepeatView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ final class NewWorkoutViewController: UIViewController {
         view.addView(titleLabel)
         view.addView(closeButton)
         view.addView(nameView)
+        view.addView(dateAndRepeatView)
     }
     
     @objc private func tapCloseButton() {
@@ -46,9 +48,12 @@ extension NewWorkoutViewController {
             nameView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
             nameView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             nameView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            nameView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
+            nameView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.07),
             
-            
+            dateAndRepeatView.topAnchor.constraint(equalTo: nameView.bottomAnchor, constant: 10),
+            dateAndRepeatView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            dateAndRepeatView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            dateAndRepeatView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.145),
         ])
     }
 }
