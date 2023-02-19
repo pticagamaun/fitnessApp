@@ -13,6 +13,7 @@ final class NewWorkoutViewController: UIViewController {
     private lazy var closeButton = CloseButton(self, action: #selector(tapCloseButton), event: .touchUpInside)
     private let nameView = NameView()
     private let dateAndRepeatView = DateAndRepeatView()
+    private let repsOrTimerView = RepsOrTimerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ final class NewWorkoutViewController: UIViewController {
         view.addView(closeButton)
         view.addView(nameView)
         view.addView(dateAndRepeatView)
+        view.addView(repsOrTimerView)
     }
     
     @objc private func tapCloseButton() {
@@ -54,6 +56,11 @@ extension NewWorkoutViewController {
             dateAndRepeatView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             dateAndRepeatView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             dateAndRepeatView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.145),
+            
+            repsOrTimerView.topAnchor.constraint(equalTo: dateAndRepeatView.bottomAnchor, constant: 20),
+            repsOrTimerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            repsOrTimerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            repsOrTimerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
         ])
     }
 }
