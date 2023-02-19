@@ -1,5 +1,5 @@
 //
-//  UIFont + Extensions.swift
+//  UIFont + Extension.swift
 //  FitnessApp-1.0
 //
 //  Created by Vadim on 12.02.2023.
