@@ -11,14 +11,7 @@ final class NewWorkoutViewController: UIViewController {
     
     private let titleLabel = UILabel(text: "NEW WORKOUT", textColor: .specialBlack, font: .robotoMedium24)
     private lazy var closeButton = CloseButton(self, action: #selector(tapCloseButton), event: .touchUpInside)
-    private let nameTextField: UITextField = {
-        let textField = UITextField()
-        textField.backgroundColor = .specialBrown
-        
-        textField.layer.cornerRadius = 10
-        textField.clearButtonMode = .whileEditing
-        return textField
-    }()
+    private let nameView = NameView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +23,7 @@ final class NewWorkoutViewController: UIViewController {
         view.backgroundColor = .mainBackground
         view.addView(titleLabel)
         view.addView(closeButton)
-        view.addView(nameTextField)
+        view.addView(nameView)
     }
     
     @objc private func tapCloseButton() {
@@ -50,10 +43,10 @@ extension NewWorkoutViewController {
             closeButton.heightAnchor.constraint(equalToConstant: 30),
             closeButton.widthAnchor.constraint(equalToConstant: 30),
             
-            nameTextField.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
-            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            nameTextField.heightAnchor.constraint(equalToConstant: 40),
+            nameView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10),
+            nameView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            nameView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            nameView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2),
             
             
         ])

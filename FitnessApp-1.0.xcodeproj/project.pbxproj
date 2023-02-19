@@ -20,6 +20,9 @@
 		DD11850A299EA01F00BBEBD3 /* UIStackView + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD118509299EA01F00BBEBD3 /* UIStackView + Extensions.swift */; };
 		DD11850D29A15E2900BBEBD3 /* NewWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11850C29A15E2900BBEBD3 /* NewWorkoutViewController.swift */; };
 		DD11850F29A1600400BBEBD3 /* CloseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11850E29A1600400BBEBD3 /* CloseButton.swift */; };
+		DD11851229A285BF00BBEBD3 /* BrownTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11851129A285BF00BBEBD3 /* BrownTextField.swift */; };
+		DD11851529A2862E00BBEBD3 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11851429A2862E00BBEBD3 /* NameView.swift */; };
+		DD11851729A28B2500BBEBD3 /* DateAndRepeatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11851629A28B2500BBEBD3 /* DateAndRepeatView.swift */; };
 		DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CC2997B1500039567D /* AppDelegate.swift */; };
 		DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CE2997B1500039567D /* SceneDelegate.swift */; };
 		DD5734D12997B1500039567D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734D02997B1500039567D /* MainViewController.swift */; };
@@ -44,6 +47,9 @@
 		DD118509299EA01F00BBEBD3 /* UIStackView + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extensions.swift"; sourceTree = "<group>"; };
 		DD11850C29A15E2900BBEBD3 /* NewWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutViewController.swift; sourceTree = "<group>"; };
 		DD11850E29A1600400BBEBD3 /* CloseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButton.swift; sourceTree = "<group>"; };
+		DD11851129A285BF00BBEBD3 /* BrownTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrownTextField.swift; sourceTree = "<group>"; };
+		DD11851429A2862E00BBEBD3 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		DD11851629A28B2500BBEBD3 /* DateAndRepeatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAndRepeatView.swift; sourceTree = "<group>"; };
 		DD5734C92997B1500039567D /* FitnessApp-1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FitnessApp-1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5734CC2997B1500039567D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD5734CE2997B1500039567D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +78,7 @@
 			children = (
 				DD1184F3299809F800BBEBD3 /* AddWorkoutButton.swift */,
 				DD11850E29A1600400BBEBD3 /* CloseButton.swift */,
+				DD11851129A285BF00BBEBD3 /* BrownTextField.swift */,
 			);
 			path = Unique;
 			sourceTree = "<group>";
@@ -106,6 +113,7 @@
 		DD11850B29A15E0E00BBEBD3 /* NewWorkoutModule */ = {
 			isa = PBXGroup;
 			children = (
+				DD11851329A2860200BBEBD3 /* View */,
 				DD11851029A169BB00BBEBD3 /* Controller */,
 			);
 			path = NewWorkoutModule;
@@ -117,6 +125,15 @@
 				DD11850C29A15E2900BBEBD3 /* NewWorkoutViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		DD11851329A2860200BBEBD3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DD11851429A2862E00BBEBD3 /* NameView.swift */,
+				DD11851629A28B2500BBEBD3 /* DateAndRepeatView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DD5734C02997B1500039567D = {
@@ -291,15 +308,18 @@
 				DD1185042999894400BBEBD3 /* CalendarCollectionViewCell.swift in Sources */,
 				DD5734D12997B1500039567D /* MainViewController.swift in Sources */,
 				DD1184F4299809F800BBEBD3 /* AddWorkoutButton.swift in Sources */,
+				DD11851729A28B2500BBEBD3 /* DateAndRepeatView.swift in Sources */,
 				DD1184FA29997CCB00BBEBD3 /* UIFont + Extensions.swift in Sources */,
 				DD1185062999936F00BBEBD3 /* WorkoutTableView.swift in Sources */,
 				DD118508299AB38200BBEBD3 /* WorkoutTableViewCell.swift in Sources */,
 				DD11850F29A1600400BBEBD3 /* CloseButton.swift in Sources */,
 				DD5734EC2997F59D0039567D /* HeaderView.swift in Sources */,
+				DD11851229A285BF00BBEBD3 /* BrownTextField.swift in Sources */,
 				DD5734E72997F1240039567D /* UIColor + Extension.swift in Sources */,
 				DD1184EE2998065800BBEBD3 /* UILabel + Extension.swift in Sources */,
 				DD118501299984A100BBEBD3 /* CalendarCollectionView.swift in Sources */,
 				DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */,
+				DD11851529A2862E00BBEBD3 /* NameView.swift in Sources */,
 				DD1184F62999759300BBEBD3 /* WeatherView.swift in Sources */,
 				DD5734EA2997F42F0039567D /* UIView + Extension.swift in Sources */,
 				DD11850D29A15E2900BBEBD3 /* NewWorkoutViewController.swift in Sources */,
