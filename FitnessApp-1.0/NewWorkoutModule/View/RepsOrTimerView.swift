@@ -17,7 +17,11 @@ final class RepsOrTimerView: UIView {
         return view
     }()
     private let setsSlider = SliderView(name: "Sets", minValue: 0, maxValue: 10)
-
+    private let chooseRepsOrTimer = UILabel(text: "Choose repeat or timer", textColor: .specialLightGray, font: .robotoMedium16)
+    private let repsSlider = SliderView(name: "Reps", minValue: 0, maxValue: 30)
+    private let timerSlider = SliderView(name: "Timer", minValue: 0, maxValue: 600)
+    private var stackView = UIStackView()
+    private lazy var saveButton = GreenButton(title: "SAVE", target: self, action: #selector(saveButtonTapped))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,7 +37,19 @@ final class RepsOrTimerView: UIView {
         backgroundColor = .none
         addView(repsOrTimerLabel)
         addView(backgroundView)
-        addView(setsSlider)
+        stackView = UIStackView([setsSlider, chooseRepsOrTimer, repsSlider, timerSlider], spacing: 10, axis: .vertical)
+        addView(stackView)
+        chooseRepsOrTimer.textAlignment = .center
+        addView(saveButton)
+    }
+    
+    @objc private func saveButtonTapped() {
+        print(#function)
+    }
+}
+
+extension RepsOrTimerView: SliderViewProtocol {
+    func sliderValue() {
     }
 }
 
@@ -50,10 +66,15 @@ extension RepsOrTimerView {
             backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             
-            setsSlider.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 15),
-            setsSlider.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
-            setsSlider.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
-            setsSlider.heightAnchor.constraint(equalToConstant: 50),
+            stackView.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 15),
+            stackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
+            stackView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.85),
+            
+            saveButton.topAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: 20),
+            saveButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            saveButton.heightAnchor.constraint(equalToConstant: 55),
         ])
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 final class NameView: UIView {
     
     private let nameLabel = UILabel(text: "Name", textColor: .specialLightGray, font: .robotoMedium16)
-    private let brownTextField = BrownTextField()
+    private let nameTextField = BrownTextField()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,8 +25,12 @@ final class NameView: UIView {
     private func setupView() {
         backgroundColor = .none
         addView(nameLabel)
-        addView(brownTextField)
+        addView(nameTextField)
     }
+    
+    public func hideKeyboard() {
+            nameTextField.resignFirstResponder()
+        }
     
 }
 
@@ -38,10 +42,10 @@ extension NameView {
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             nameLabel.heightAnchor.constraint(equalToConstant: 17),
             
-            brownTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 1),
-            brownTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            brownTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            brownTextField.heightAnchor.constraint(equalToConstant: 40)
+            nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 1),
+            nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            nameTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 }
