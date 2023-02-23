@@ -26,6 +26,9 @@
 		DD11851929A29E6A00BBEBD3 /* RepsOrTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11851829A29E6A00BBEBD3 /* RepsOrTimerView.swift */; };
 		DD11851D29A2A0B700BBEBD3 /* GreenSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11851C29A2A0B700BBEBD3 /* GreenSlider.swift */; };
 		DD11852029A2A63E00BBEBD3 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11851F29A2A63E00BBEBD3 /* SliderView.swift */; };
+		DD11852229A7EA1B00BBEBD3 /* GreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11852129A7EA1B00BBEBD3 /* GreenButton.swift */; };
+		DD11852529A7F3E800BBEBD3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11852429A7F3E800BBEBD3 /* MainTabBarController.swift */; };
+		DD11852829A7F47900BBEBD3 /* StatisticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD11852729A7F47900BBEBD3 /* StatisticViewController.swift */; };
 		DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CC2997B1500039567D /* AppDelegate.swift */; };
 		DD5734CF2997B1500039567D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734CE2997B1500039567D /* SceneDelegate.swift */; };
 		DD5734D12997B1500039567D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734D02997B1500039567D /* MainViewController.swift */; };
@@ -56,6 +59,9 @@
 		DD11851829A29E6A00BBEBD3 /* RepsOrTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsOrTimerView.swift; sourceTree = "<group>"; };
 		DD11851C29A2A0B700BBEBD3 /* GreenSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenSlider.swift; sourceTree = "<group>"; };
 		DD11851F29A2A63E00BBEBD3 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		DD11852129A7EA1B00BBEBD3 /* GreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreenButton.swift; sourceTree = "<group>"; };
+		DD11852429A7F3E800BBEBD3 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		DD11852729A7F47900BBEBD3 /* StatisticViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewController.swift; sourceTree = "<group>"; };
 		DD5734C92997B1500039567D /* FitnessApp-1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FitnessApp-1.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD5734CC2997B1500039567D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD5734CE2997B1500039567D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +92,7 @@
 				DD11850E29A1600400BBEBD3 /* CloseButton.swift */,
 				DD11851129A285BF00BBEBD3 /* BrownTextField.swift */,
 				DD11851C29A2A0B700BBEBD3 /* GreenSlider.swift */,
+				DD11852129A7EA1B00BBEBD3 /* GreenButton.swift */,
 			);
 			path = Unique;
 			sourceTree = "<group>";
@@ -153,6 +160,22 @@
 			path = SubView;
 			sourceTree = "<group>";
 		};
+		DD11852329A7F3C400BBEBD3 /* NavigationModule */ = {
+			isa = PBXGroup;
+			children = (
+				DD11852429A7F3E800BBEBD3 /* MainTabBarController.swift */,
+			);
+			path = NavigationModule;
+			sourceTree = "<group>";
+		};
+		DD11852629A7F45400BBEBD3 /* StatisticModule */ = {
+			isa = PBXGroup;
+			children = (
+				DD11852729A7F47900BBEBD3 /* StatisticViewController.swift */,
+			);
+			path = StatisticModule;
+			sourceTree = "<group>";
+		};
 		DD5734C02997B1500039567D = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +196,10 @@
 			isa = PBXGroup;
 			children = (
 				DD5734E02997B3660039567D /* Application */,
+				DD11852329A7F3C400BBEBD3 /* NavigationModule */,
 				DD5734E22997B3E90039567D /* MainModule */,
 				DD11850B29A15E0E00BBEBD3 /* NewWorkoutModule */,
+				DD11852629A7F45400BBEBD3 /* StatisticModule */,
 				DD5734E52997F0FD0039567D /* Extension */,
 				DD5734E12997B3D00039567D /* Other */,
 			);
@@ -323,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD1185042999894400BBEBD3 /* CalendarCollectionViewCell.swift in Sources */,
+				DD11852229A7EA1B00BBEBD3 /* GreenButton.swift in Sources */,
 				DD5734D12997B1500039567D /* MainViewController.swift in Sources */,
 				DD11851929A29E6A00BBEBD3 /* RepsOrTimerView.swift in Sources */,
 				DD1184F4299809F800BBEBD3 /* AddWorkoutButton.swift in Sources */,
@@ -339,8 +365,10 @@
 				DD1184EE2998065800BBEBD3 /* UILabel + Extension.swift in Sources */,
 				DD118501299984A100BBEBD3 /* CalendarCollectionView.swift in Sources */,
 				DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */,
+				DD11852529A7F3E800BBEBD3 /* MainTabBarController.swift in Sources */,
 				DD11851529A2862E00BBEBD3 /* NameView.swift in Sources */,
 				DD1184F62999759300BBEBD3 /* WeatherView.swift in Sources */,
+				DD11852829A7F47900BBEBD3 /* StatisticViewController.swift in Sources */,
 				DD5734EA2997F42F0039567D /* UIView + Extension.swift in Sources */,
 				DD11850D29A15E2900BBEBD3 /* NewWorkoutViewController.swift in Sources */,
 				DD11850A299EA01F00BBEBD3 /* UIStackView + Extension.swift in Sources */,
