@@ -9,6 +9,7 @@ import UIKit
 
 protocol HeaderViewProtocol: AnyObject {
     func addWorkoutButtonTapped()
+    func selectCalendarItem(indexPath: IndexPath)
 }
 
 final class HeaderView: UIView {
@@ -55,6 +56,7 @@ final class HeaderView: UIView {
         addView(weatherView)
         addView(calendarCollectionView)
         addView(workoutTodayLabel)
+        calendarCollectionView.calendarDelegate = self
     }
     
     @objc private func addWorkoutButtonTap() {
@@ -65,6 +67,12 @@ final class HeaderView: UIView {
         userPhoto.layer.cornerRadius = userPhoto.frame.height / 2
     }
     
+}
+
+extension HeaderView: CalendarCollectionProtocol {
+    func selectItem(indexPath: IndexPath) {
+        headerViewDelegate?.selectCalendarItem(indexPath: indexPath)
+    }
 }
 
 extension HeaderView {
