@@ -20,7 +20,11 @@ final class StatisticTableView: UITableView {
     
     private func setupView() {
         backgroundColor = .none
-        register(UITableViewCell.self, forCellReuseIdentifier: "statisticTableView")
+        bounces = false
+        allowsSelection = false
+        separatorColor = .clear
+        showsVerticalScrollIndicator = false
+        register(StatisticsTableViewCell.self, forCellReuseIdentifier: StatisticsTableViewCell.identifier)
         delegate = self
         dataSource = self
     }
@@ -32,7 +36,13 @@ extension StatisticTableView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = dequeueReusableCell(withIdentifier: "statisticTableView", for: indexPath)
+        guard let cell = dequeueReusableCell(withIdentifier: StatisticsTableViewCell.identifier, for: indexPath) as? StatisticsTableViewCell else {
+            return UITableViewCell()
+        }
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        55
     }
 }

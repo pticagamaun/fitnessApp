@@ -35,7 +35,7 @@ final class WorkoutTableViewCell: UITableViewCell {
         return image
     }()
     
-    private let titleWorkoutLabel = UILabel(text: "Pull Ups", textColor: .specialBlack, font: .robotoMedium22)
+    private let titleWorkoutLabel = UILabel(text: "Pull Ups", textColor: .specialBlack, font: .robotoMedium20)
     private let repsLabel = UILabel(text: "Reps: 10", textColor: .specialLightBlack, font: .robotoMedium16)
     private let setsLabel = UILabel(text: "Sets: 2", textColor: .specialLightBlack, font: .robotoMedium16)
     private lazy var startButton: UIButton = {
@@ -57,6 +57,7 @@ final class WorkoutTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setCell()
         setConstraints()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -100,9 +101,9 @@ extension WorkoutTableViewCell {
             
             labelsStackView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             labelsStackView.leadingAnchor.constraint(equalTo: subView.trailingAnchor, constant: 10),
-            labelsStackView.heightAnchor.constraint(equalToConstant: 40),
+            labelsStackView.heightAnchor.constraint(equalToConstant: 45),
             
-            startButton.topAnchor.constraint(equalTo: labelsStackView.bottomAnchor, constant: 3),
+            startButton.topAnchor.constraint(equalTo: labelsStackView.bottomAnchor, constant: 5),
             startButton.leadingAnchor.constraint(equalTo: subView.trailingAnchor, constant: 10),
             startButton.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -10),
             startButton.bottomAnchor.constraint(equalTo: backgroundViewCell.bottomAnchor, constant: -10)
