@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol CalendarCollectionProtocol: AnyObject {
+    func selectItem(indexPath: IndexPath)
+}
+
 final class CalendarCollectionView: UICollectionView {
     
+    weak var calendarDelegate: CalendarCollectionProtocol?
     private let flowLayout = UICollectionViewFlowLayout()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -40,7 +45,7 @@ extension CalendarCollectionView: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath)
+        calendarDelegate?.selectItem(indexPath: indexPath)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
