@@ -17,6 +17,7 @@ extension UIFont {
     static let robotoMedium20 = UIFont(name: "Roboto-Medium", size: 20)
     static let robotoMedium22 = UIFont(name: "Roboto-Medium", size: 22)
     static let robotoMedium24 = UIFont(name: "Roboto-Medium", size: 24)
+    static let robotoMedium28 = UIFont(name: "Roboto-Medium", size: 28)
     
     //Roboto-Bold
     static let robotoBold12 = UIFont(name: "Roboto-Bold", size: 12)
@@ -26,5 +27,6 @@ extension UIFont {
     static let robotoBold20 = UIFont(name: "Roboto-Bold", size: 20)
     static let robotoBold22 = UIFont(name: "Roboto-Bold", size: 22)
     static let robotoBold24 = UIFont(name: "Roboto-Bold", size: 24)
+    static let robotoBold28 = UIFont(name: "Roboto-Bold", size: 28)
     static let robotoBold48 = UIFont(name: "Roboto-Bold", size: 48)
 }
