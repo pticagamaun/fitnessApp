@@ -26,12 +26,20 @@ final class NameView: UIView {
         backgroundColor = .none
         addView(nameLabel)
         addView(nameTextField)
+        nameTextField.delegate = self
     }
     
     public func hideKeyboard() {
             nameTextField.resignFirstResponder()
         }
     
+}
+
+extension NameView: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
 }
 
 extension NameView {

@@ -10,8 +10,22 @@ import UIKit
 final class CalendarCollectionViewCell: UICollectionViewCell {
     
     static let idCallendarCollectionCell = "CalendarCollectionViewIdentifier"
-    private let weekdayLabel = UILabel(text: "Tu", textColor: .specialLightBlack, font: .robotoMedium16)
-    private let dayLabel = UILabel(text: "19", textColor: .specialDarkGreen, font: .robotoMedium20)
+    private let weekdayLabel = UILabel(text: "Tu", textColor: .white, font: .robotoMedium16)
+    private let dayLabel = UILabel(text: "19", textColor: .white, font: .robotoMedium20)
+    
+    override var isSelected: Bool {
+        didSet {
+            if isSelected {
+                backgroundColor = .specialYellow
+                weekdayLabel.textColor = .specialLightBlack
+                dayLabel.textColor = .specialLightBlack
+            } else {
+                backgroundColor = .none
+                weekdayLabel.textColor = .white
+                dayLabel.textColor = .white
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,7 +38,6 @@ final class CalendarCollectionViewCell: UICollectionViewCell {
     }
     
     private func setCell() {
-        backgroundColor = .specialYellow
         layer.cornerRadius = 10
         weekdayLabel.textAlignment = .center
         dayLabel.textAlignment = .center
@@ -42,7 +55,6 @@ extension CalendarCollectionViewCell {
             
             dayLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
             dayLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
-            
         ])
     }
     
