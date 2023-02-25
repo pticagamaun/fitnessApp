@@ -31,6 +31,18 @@ final class MainViewController: UIViewController {
     }
 }
 
+extension MainViewController: HeaderViewProtocol {
+    func selectCalendarItem(indexPath: IndexPath) {
+        print(indexPath)
+    }
+    
+    func addWorkoutButtonTapped() {
+        let newWorkoutVC = NewWorkoutViewController()
+        newWorkoutVC.modalPresentationStyle = .fullScreen
+        present(newWorkoutVC, animated: true)
+    }
+}
+
 extension MainViewController {
     private func setConstraints() {
         NSLayoutConstraint.activate([
@@ -47,13 +59,6 @@ extension MainViewController {
     }
 }
 
-extension MainViewController: HeaderViewProtocol {
-    func addWorkoutButtonTapped() {
-        let newWorkoutVC = NewWorkoutViewController()
-        newWorkoutVC.modalPresentationStyle = .fullScreen
-        present(newWorkoutVC, animated: true)
-    }
-}
 
 
 
