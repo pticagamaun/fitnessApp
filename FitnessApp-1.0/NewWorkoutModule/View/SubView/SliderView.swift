@@ -7,7 +7,7 @@
 import UIKit
 
 protocol SliderViewProtocol: AnyObject {
-    func sliderValue()
+    func sliderValue(isTimer: Bool)
 }
 
 final class SliderView: UIView {
@@ -21,6 +21,22 @@ final class SliderView: UIView {
                                       font: .robotoBold22)
     private lazy var slider = GreenSlider(self, selector: #selector(sliderChangeValue))
     private var stackView = UIStackView()
+    public var isTimer = false
+    public var isActive: Bool = true {
+        didSet {
+            if isActive {
+                nameLabel.alpha = 1
+                numberLabel.alpha = 1
+                slider.alpha = 1
+            } else {
+                nameLabel.alpha = 0.5
+                numberLabel.alpha = 0.5
+                slider.alpha = 0.5
+                numberLabel.text = "0"
+                slider.value = 0
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,12 +65,13 @@ final class SliderView: UIView {
     }
     
     @objc private func sliderChangeValue() {
-        numberLabel.text = String(Int(slider.value))
-        print(String(Int(slider.value)))
+        let intValueSlider = Int(slider.value)
+        numberLabel.text = isTimer ? intValueSlider.toMinutesAndSeconds() : "\(Int(slider.value))"
+        sliderViewDelegate?.sliderValue(isTimer: isTimer)
     }
 }
 
-extension SliderView {
+private extension SliderView {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: topAnchor, constant: 0),
