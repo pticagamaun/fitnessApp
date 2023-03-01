@@ -16,10 +16,10 @@ final class RepsOrTimerView: UIView {
         view.layer.cornerRadius = 10
         return view
     }()
-    private let setsSlider = SliderView(name: "Sets", minValue: 0, maxValue: 10)
+    private let setsSliderView = SliderView(name: "Sets", minValue: 0, maxValue: 10)
     private let chooseRepsOrTimer = UILabel(text: "Choose repeat or timer", textColor: .specialLightGray, font: .robotoMedium16)
-    private let repsSlider = SliderView(name: "Reps", minValue: 0, maxValue: 30)
-    private let timerSlider = SliderView(name: "Timer", minValue: 0, maxValue: 600)
+    private let repsSliderView = SliderView(name: "Reps", minValue: 0, maxValue: 30)
+    private let timerSliderView = SliderView(name: "Timer", minValue: 0, maxValue: 600)
     private var stackView = UIStackView()
     private lazy var saveButton = GreenButton(title: "SAVE", target: self, action: #selector(saveButtonTapped))
     
@@ -37,10 +37,18 @@ final class RepsOrTimerView: UIView {
         backgroundColor = .none
         addView(repsOrTimerLabel)
         addView(backgroundView)
-        stackView = UIStackView([setsSlider, chooseRepsOrTimer, repsSlider, timerSlider], spacing: 10, axis: .vertical)
+        stackView = UIStackView([setsSliderView, chooseRepsOrTimer, repsSliderView, timerSliderView], spacing: 10, axis: .vertical)
         addView(stackView)
         chooseRepsOrTimer.textAlignment = .center
         addView(saveButton)
+        setDelegate()
+        timerSliderView.isTimer = true
+    }
+    
+    private func setDelegate() {
+        setsSliderView.sliderViewDelegate = self
+        repsSliderView.sliderViewDelegate = self
+        timerSliderView.sliderViewDelegate = self
     }
     
     @objc private func saveButtonTapped() {
@@ -49,11 +57,15 @@ final class RepsOrTimerView: UIView {
 }
 
 extension RepsOrTimerView: SliderViewProtocol {
-    func sliderValue() {
+    func sliderValue(isTimer: Bool) {
+        repsSliderView.isActive = !isTimer
+        timerSliderView.isActive = isTimer
     }
 }
 
-extension RepsOrTimerView {
+//MARK: - Constraints
+
+private extension RepsOrTimerView {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
