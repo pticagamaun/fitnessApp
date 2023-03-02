@@ -30,20 +30,25 @@ final class NameView: UIView {
     }
     
     public func hideKeyboard() {
-            nameTextField.resignFirstResponder()
-        }
+        nameTextField.resignFirstResponder()
+    }
+    
+    public func getTextNameTextField() -> String {
+        guard let text = nameTextField.text else {return ""}
+        return text
+    }
     
 }
 
 extension NameView: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            return true
-        }
+        textField.resignFirstResponder()
+        return true
+    }
 }
 
 extension NameView {
-
+    
     private func setConstraints() {
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 0),
