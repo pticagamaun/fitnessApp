@@ -16,12 +16,12 @@ final class RepsOrTimerView: UIView {
         view.layer.cornerRadius = 10
         return view
     }()
-    private let setsSliderView = SliderView(name: "Sets", minValue: 0, maxValue: 10)
+    private let setsSliderView = SliderView(name: "Sets", minValue: 0, maxValue: 10, type: .sets)
     private let chooseRepsOrTimer = UILabel(text: "Choose repeat or timer", textColor: .specialLightGray, font: .robotoMedium16)
-    private let repsSliderView = SliderView(name: "Reps", minValue: 0, maxValue: 30)
-    private let timerSliderView = SliderView(name: "Timer", minValue: 0, maxValue: 600)
+    private let repsSliderView = SliderView(name: "Reps", minValue: 0, maxValue: 30, type: .reps)
+    private let timerSliderView = SliderView(name: "Timer", minValue: 0, maxValue: 600, type: .timer)
     private var stackView = UIStackView()
-    private lazy var saveButton = GreenButton(title: "SAVE", target: self, action: #selector(saveButtonTapped))
+    public var (sets, reps, timer) = (0, 0, 0)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,9 +40,7 @@ final class RepsOrTimerView: UIView {
         stackView = UIStackView([setsSliderView, chooseRepsOrTimer, repsSliderView, timerSliderView], spacing: 10, axis: .vertical)
         addView(stackView)
         chooseRepsOrTimer.textAlignment = .center
-        addView(saveButton)
         setDelegate()
-        timerSliderView.isTimer = true
     }
     
     private func setDelegate() {
@@ -50,16 +48,24 @@ final class RepsOrTimerView: UIView {
         repsSliderView.sliderViewDelegate = self
         timerSliderView.sliderViewDelegate = self
     }
-    
-    @objc private func saveButtonTapped() {
-        print(#function)
-    }
 }
 
 extension RepsOrTimerView: SliderViewProtocol {
-    func sliderValue(isTimer: Bool) {
-        repsSliderView.isActive = !isTimer
-        timerSliderView.isActive = isTimer
+    func sliderValue(sliderType: SliderType, value: Int) {
+        switch sliderType {
+        case .sets:
+            sets = value
+        case .reps:
+            timerSliderView.isActive = false
+            repsSliderView.isActive = true
+            reps = value
+            timer = 0
+        case .timer:
+            timerSliderView.isActive = true
+            repsSliderView.isActive = false
+            timer = value
+            reps = 0
+        }
     }
 }
 
@@ -82,11 +88,6 @@ private extension RepsOrTimerView {
             stackView.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -10),
             stackView.heightAnchor.constraint(equalTo: backgroundView.heightAnchor, multiplier: 0.85),
-            
-            saveButton.topAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: 20),
-            saveButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
-            saveButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            saveButton.heightAnchor.constraint(equalToConstant: 55),
         ])
     }
 }

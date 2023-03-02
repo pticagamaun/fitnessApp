@@ -14,12 +14,13 @@ class GreenButton: UIButton {
         setupButton()
     }
     
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     convenience init(title: String, target: Any?, action: Selector) {
-        self.init()
+        self.init(type: .system)
         self.setTitle(title, for: .normal)
         self.addTarget(target, action: action, for: .touchUpInside)
     }

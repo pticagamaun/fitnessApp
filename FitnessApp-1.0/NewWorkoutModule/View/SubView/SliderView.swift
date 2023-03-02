@@ -7,7 +7,7 @@
 import UIKit
 
 protocol SliderViewProtocol: AnyObject {
-    func sliderValue(isTimer: Bool)
+    func sliderValue(sliderType: SliderType, value: Int)
 }
 
 final class SliderView: UIView {
@@ -19,9 +19,9 @@ final class SliderView: UIView {
     private let numberLabel = UILabel(text: "0",
                                       textColor: .specialBlack,
                                       font: .robotoBold22)
+    private var sliderType: SliderType?
     private lazy var slider = GreenSlider(self, selector: #selector(sliderChangeValue))
     private var stackView = UIStackView()
-    public var isTimer = false
     public var isActive: Bool = true {
         didSet {
             if isActive {
@@ -44,11 +44,12 @@ final class SliderView: UIView {
         setConstraints()
     }
     
-    convenience init(name: String, minValue: Float, maxValue: Float) {
+    convenience init(name: String, minValue: Float, maxValue: Float, type: SliderType) {
         self.init(frame: .zero)
         nameLabel.text = name
         slider.minimumValue = minValue
         slider.maximumValue = maxValue
+        sliderType = type
     }
     
     required init?(coder: NSCoder) {
@@ -66,8 +67,9 @@ final class SliderView: UIView {
     
     @objc private func sliderChangeValue() {
         let intValueSlider = Int(slider.value)
-        numberLabel.text = isTimer ? intValueSlider.toMinutesAndSeconds() : "\(Int(slider.value))"
-        sliderViewDelegate?.sliderValue(isTimer: isTimer)
+        guard let type = sliderType else {return}
+        numberLabel.text = type == .timer ? intValueSlider.toMinutesAndSeconds() : "\(Int(slider.value))"
+        sliderViewDelegate?.sliderValue(sliderType: type, value: intValueSlider)
     }
 }
 

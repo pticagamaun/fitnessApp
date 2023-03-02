@@ -14,6 +14,9 @@ final class NewWorkoutViewController: UIViewController {
     private let nameView = NameView()
     private let dateAndRepeatView = DateAndRepeatView()
     private let repsOrTimerView = RepsOrTimerView()
+    private lazy var saveButton = GreenButton(title: "SAVE", target: self, action: #selector(saveButtonTapped))
+    private let workoutModel = WorkoutModel()
+    private let workoutImage = UIImage(named: "workoutImage")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +32,7 @@ final class NewWorkoutViewController: UIViewController {
         view.addView(nameView)
         view.addView(dateAndRepeatView)
         view.addView(repsOrTimerView)
-    }
-    
-    @objc private func tapCloseButton() {
-        dismiss(animated: true)
+        view.addView(saveButton)
     }
     
     private func setupGestureRecognizers() {
@@ -43,8 +43,24 @@ final class NewWorkoutViewController: UIViewController {
         view.addGestureRecognizer(swipeGesture)
     }
     
+    @objc private func tapCloseButton() {
+        dismiss(animated: true)
+    }
+    
     @objc private func dismissKeyboard() {
         nameView.hideKeyboard()
+    }
+    
+    @objc private func saveButtonTapped() {
+        workoutModel.workoutName = nameView.getTextNameTextField()
+        workoutModel.workoutNumberOfDay = dateAndRepeatView.getDateAndSwitch().date.weekdayNumber()
+        workoutModel.workoutRepeat = dateAndRepeatView.getDateAndSwitch().dateRepeat
+        workoutModel.workoutSets = repsOrTimerView.sets
+        workoutModel.workoutReps = repsOrTimerView.reps
+        workoutModel.workoutTimer = repsOrTimerView.timer
+        guard let imageData = workoutImage?.pngData() else {return}
+        workoutModel.workoutImage = imageData
+        print(workoutModel)
     }
 }
 
@@ -74,6 +90,11 @@ extension NewWorkoutViewController {
             repsOrTimerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             repsOrTimerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             repsOrTimerView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
+            
+            saveButton.topAnchor.constraint(equalTo: repsOrTimerView.bottomAnchor, constant: 20),
+            saveButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            saveButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            saveButton.heightAnchor.constraint(equalToConstant: 55),
         ])
     }
 }
