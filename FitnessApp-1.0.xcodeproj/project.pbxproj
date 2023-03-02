@@ -43,7 +43,10 @@
 		DD5734E72997F1240039567D /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734E62997F1240039567D /* UIColor + Extension.swift */; };
 		DD5734EA2997F42F0039567D /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734E92997F42F0039567D /* UIView + Extension.swift */; };
 		DD5734EC2997F59D0039567D /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD5734EB2997F59D0039567D /* HeaderView.swift */; };
-		DDECACAB29AFEF39008E574A /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECACAA29AFEF39008E574A /* MainModel.swift */; };
+		DDECACAB29AFEF39008E574A /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECACAA29AFEF39008E574A /* WorkoutModel.swift */; };
+		DDECACAE29AFF76A008E574A /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECACAD29AFF76A008E574A /* RealmManager.swift */; };
+		DDECACB029B136A4008E574A /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECACAF29B136A3008E574A /* Date + Extension.swift */; };
+		DDECACB329B13BA6008E574A /* SliderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDECACB229B13BA6008E574A /* SliderType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +86,10 @@
 		DD5734E62997F1240039567D /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		DD5734E92997F42F0039567D /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		DD5734EB2997F59D0039567D /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		DDECACAA29AFEF39008E574A /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
+		DDECACAA29AFEF39008E574A /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
+		DDECACAD29AFF76A008E574A /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		DDECACAF29B136A3008E574A /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
+		DDECACB229B13BA6008E574A /* SliderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +148,7 @@
 		DD11850B29A15E0E00BBEBD3 /* NewWorkoutModule */ = {
 			isa = PBXGroup;
 			children = (
+				DDECACB129B13B95008E574A /* Model */,
 				DD11851329A2860200BBEBD3 /* View */,
 				DD11851029A169BB00BBEBD3 /* Controller */,
 			);
@@ -242,6 +249,7 @@
 				DD11850B29A15E0E00BBEBD3 /* NewWorkoutModule */,
 				DD11852629A7F45400BBEBD3 /* StatisticModule */,
 				DD5734E52997F0FD0039567D /* Extension */,
+				DDECACAC29AFF72B008E574A /* Service */,
 				DD5734E12997B3D00039567D /* Other */,
 			);
 			path = "FitnessApp-1.0";
@@ -302,6 +310,7 @@
 				DD5734E82997F3F40039567D /* UIKit */,
 				DD1184EF2998099500BBEBD3 /* Unique */,
 				DD11853729AAB41B00BBEBD3 /* Int + Extenstion.swift */,
+				DDECACAF29B136A3008E574A /* Date + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -321,7 +330,23 @@
 		DDECACA929AFEF26008E574A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DDECACAA29AFEF39008E574A /* MainModel.swift */,
+				DDECACAA29AFEF39008E574A /* WorkoutModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DDECACAC29AFF72B008E574A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				DDECACAD29AFF76A008E574A /* RealmManager.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		DDECACB129B13B95008E574A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DDECACB229B13BA6008E574A /* SliderType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -422,14 +447,17 @@
 				DD11850F29A1600400BBEBD3 /* CloseButton.swift in Sources */,
 				DD5734EC2997F59D0039567D /* HeaderView.swift in Sources */,
 				DD11851D29A2A0B700BBEBD3 /* GreenSlider.swift in Sources */,
-				DDECACAB29AFEF39008E574A /* MainModel.swift in Sources */,
+				DDECACAB29AFEF39008E574A /* WorkoutModel.swift in Sources */,
 				DD11851229A285BF00BBEBD3 /* BrownTextField.swift in Sources */,
 				DD5734E72997F1240039567D /* UIColor + Extension.swift in Sources */,
+				DDECACB329B13BA6008E574A /* SliderType.swift in Sources */,
 				DD1184EE2998065800BBEBD3 /* UILabel + Extension.swift in Sources */,
 				DD118501299984A100BBEBD3 /* CalendarCollectionView.swift in Sources */,
 				DD5734CD2997B1500039567D /* AppDelegate.swift in Sources */,
+				DDECACB029B136A4008E574A /* Date + Extension.swift in Sources */,
 				DD11852529A7F3E800BBEBD3 /* MainTabBarController.swift in Sources */,
 				DD11851529A2862E00BBEBD3 /* NameView.swift in Sources */,
+				DDECACAE29AFF76A008E574A /* RealmManager.swift in Sources */,
 				DD1184F62999759300BBEBD3 /* WeatherView.swift in Sources */,
 				DD11852829A7F47900BBEBD3 /* StatisticViewController.swift in Sources */,
 				DD5734EA2997F42F0039567D /* UIView + Extension.swift in Sources */,
