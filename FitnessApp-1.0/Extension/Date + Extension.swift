@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+extension Date {
+    func weekdayNumber() -> Int {
+        let calendar = Calendar(identifier: .gregorian)
+        return calendar.component(.weekday, from: self)
+    }
+}
