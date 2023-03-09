@@ -15,7 +15,7 @@ final class NewWorkoutViewController: UIViewController {
     private let dateAndRepeatView = DateAndRepeatView()
     private let repsOrTimerView = RepsOrTimerView()
     private lazy var saveButton = GreenButton(title: "SAVE", target: self, action: #selector(saveButtonTapped))
-    private let workoutModel = WorkoutModel()
+    private var workoutModel = WorkoutModel()
     private let workoutImage = UIImage(named: "workoutImage")
     
     override func viewDidLoad() {
@@ -43,16 +43,9 @@ final class NewWorkoutViewController: UIViewController {
         view.addGestureRecognizer(swipeGesture)
     }
     
-    @objc private func tapCloseButton() {
-        dismiss(animated: true)
-    }
-    
-    @objc private func dismissKeyboard() {
-        nameView.hideKeyboard()
-    }
-    
-    @objc private func saveButtonTapped() {
+    private func setModel() {
         workoutModel.workoutName = nameView.getTextNameTextField()
+        workoutModel.workoutDate = dateAndRepeatView.getDateAndSwitch().date.getLocalDate()
         workoutModel.workoutNumberOfDay = dateAndRepeatView.getDateAndSwitch().date.weekdayNumber()
         workoutModel.workoutRepeat = dateAndRepeatView.getDateAndSwitch().dateRepeat
         workoutModel.workoutSets = repsOrTimerView.sets
@@ -60,8 +53,45 @@ final class NewWorkoutViewController: UIViewController {
         workoutModel.workoutTimer = repsOrTimerView.timer
         guard let imageData = workoutImage?.pngData() else {return}
         workoutModel.workoutImage = imageData
-        print(workoutModel)
     }
+    
+    private func resetValues() {
+        nameView.resetTextNameTextField()
+        dateAndRepeatView.resetDateAndSwitch()
+        repsOrTimerView.resetSliderValue()
+    }
+    
+    private func saveModel() {
+        let text = nameView.getTextNameTextField()
+        let count = text.filter{$0.isLetter || $0.isNumber}.count
+        
+        if count != 0 &&
+            workoutModel.workoutSets != 0 &&
+            (workoutModel.workoutReps != 0 || workoutModel.workoutTimer != 0) {
+            RealmManager.shared.save(workoutModel)
+            workoutModel = WorkoutModel()
+            simpleAlert(title: "Succes", message: nil) { [weak self] in
+                guard let strongSelf = self else {return}
+                strongSelf.resetValues()
+            }
+        } else {
+            simpleAlert(title: "Error", message: "Fill all parameters", completionHandler: nil)
+        }
+    }
+    
+    @objc private func dismissKeyboard() {
+        nameView.hideKeyboard()
+    }
+    
+    @objc private func tapCloseButton() {
+        dismiss(animated: true)
+    }
+    
+    @objc private func saveButtonTapped() {
+        setModel()
+        saveModel()
+    }
+    
 }
 
 extension NewWorkoutViewController {

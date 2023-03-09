@@ -17,5 +17,5 @@ class WorkoutModel: Object {
     @Persisted var workoutTimer: Int = 0
     @Persisted var workoutName: String = ""
     @Persisted var workoutImage: Data?
-    @Persisted var workoutStatus: Bool = false
+    @Persisted var workoutStatus: Bool = true
 }

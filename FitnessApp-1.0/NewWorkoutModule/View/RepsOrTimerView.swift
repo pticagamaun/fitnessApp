@@ -48,6 +48,12 @@ final class RepsOrTimerView: UIView {
         repsSliderView.sliderViewDelegate = self
         timerSliderView.sliderViewDelegate = self
     }
+    
+    public func resetSliderValue() {
+        setsSliderView.resetValues()
+        repsSliderView.resetValues()
+        timerSliderView.resetValues()
+    }
 }
 
 extension RepsOrTimerView: SliderViewProtocol {
