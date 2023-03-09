@@ -9,9 +9,22 @@ import RealmSwift
 
 class RealmManager {
     
-    static let shared = RealmManager()
-    private init() {}
-    private let realm = try! Realm()
+    static let shared: RealmManager = {
+        do {
+            return try RealmManager()
+        } catch let error {
+            fatalError("Failed to create RealmManager: \(error)")
+        }
+    }()
+    private let realm: Realm
+    
+    private init() throws {
+        do {
+            self.realm = try Realm()
+        } catch let error {
+            throw error
+        }
+    }
     
     func getWorkoutModelResults() -> Results<WorkoutModel> {
         realm.objects(WorkoutModel.self)

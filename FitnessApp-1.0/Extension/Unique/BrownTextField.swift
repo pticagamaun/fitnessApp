@@ -29,5 +29,14 @@ final class BrownTextField: UITextField {
         self.leftViewMode = .always
         self.clearButtonMode = .always
         self.returnKeyType = .done
+        delegate = self
     }
 }
+
+extension BrownTextField: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+

@@ -41,6 +41,9 @@ extension CalendarCollectionView: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = dequeueReusableCell(withReuseIdentifier: CalendarCollectionViewCell.idCallendarCollectionCell, for: indexPath) as? CalendarCollectionViewCell else {return UICollectionViewCell()}
+        if indexPath.row == 6 {
+            collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .right)
+        }
         return cell
     }
     

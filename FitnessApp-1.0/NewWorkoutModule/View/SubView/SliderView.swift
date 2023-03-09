@@ -71,6 +71,11 @@ final class SliderView: UIView {
         numberLabel.text = type == .timer ? intValueSlider.toMinutesAndSeconds() : "\(Int(slider.value))"
         sliderViewDelegate?.sliderValue(sliderType: type, value: intValueSlider)
     }
+    
+    public func resetValues() {
+        slider.value = 0
+        numberLabel.text = "0"
+    }
 }
 
 private extension SliderView {
